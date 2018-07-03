@@ -1,26 +1,30 @@
-// n°³ÀÇ ¿ø¼Ò Áß(0~n-1) 4°³¸¦ °í¸£´Â ¸ğµç °æ¿ì¸¦ Ãâ·ÂÇÏ´Â °æ¿ìÀÇ ¼ö
+// nê°œì˜ ì›ì†Œ ì¤‘ mê°œë¥¼ ê³ ë¥´ëŠ” ëª¨ë“  ì¡°í•©ì„ ì°¾ëŠ” ì•Œê³ ë¦¬ì¦˜
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int recursive(int N,int count, int smallest) {
-	// N°³¿¡¼­ 4°³¸¦ ±¸ÇÏ¼¼¿ä
-	if (count == 1) { // 4°³¸¦ ´Ù »Ì¾Ò´Ù
-		
-		return recursive(N - 1, 4, smallest);
+void recursive(int N,vector<int>& picked, int topick) {
+	if (topick == 0) {
+		for (int i = 0; i < picked.size(); ++i) {
+			cout << picked[i] << " ";
+		}
+		cout << endl;
 	}
-	else { // 4°³ ¾ÆÁ÷ ¾È»Ì¾Ò´Ù.
-		// ÃÖ¼Ò°ª ±¸ÇÏ±â
-		cout << smallest; // smallestº¸´Ù Å«°É »ÌÀ¸¸é µÊ
-		return recursive(N-1, count- 1, smallest);
+	int smallest = picked.empty() ? 0 : picked.back() + 1;
+	for (int j = smallest; j < N; j++) {
+		picked.push_back(j);
+		recursive(N, picked, topick - 1);
+		picked.pop_back();
 	}
 }
 
 int main() {
-	int N;
-	cin >> N; 
-	//(1) ÁßÃ¸ ¹İº¹¹®À¸·Î ÇÏ´Â ¹æ¹ı
-	// NÀÌ 5¶ó¸é 0123 0124 0134 0234 1234
-	// NÀÌ 6ÀÌ¶ó¸é 0123 0124 0125 0134 0135 0145
+	int N,M;
+	cin >> N >> M; 
+	vector<int> v;
+	//(1) ì¤‘ì²© ë°˜ë³µë¬¸ìœ¼ë¡œ í•˜ëŠ” ë°©ë²•
+	// Nì´ 5ë¼ë©´ 0123 0124 0134 0234 1234
+	// Nì´ 6ì´ë¼ë©´ 0123 0124 0125 0134 0135 0145
 	//             0234 0235 0345 1234 1235 2345
 	// 0,1,2,3,4,5
 	/*
@@ -34,7 +38,7 @@ int main() {
 		}
 	}
 	*/
-	// (2) Àç±ÍÇÔ¼ö È£ÃâÇÏ±â
-	cout << recursive(N,4,0);
-
+	// (2) ì¬ê·€í•¨ìˆ˜ í˜¸ì¶œí•˜ê¸°
+	recursive(N, v, M);
+	return 0;
 }
