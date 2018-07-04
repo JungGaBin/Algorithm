@@ -1,10 +1,10 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-//NÀÌ ÁÖ¾îÁ³À» ¶§, 1ºÎÅÍ N±îÁöÀÇ ¼ö·Î ÀÌ·ç¾îÁø ¼ø¿­À» »çÀü¼øÀ¸·Î Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥
-//break, continue Â÷ÀÌ´Â break´Â Á¶°Ç °É¸®¸é for¹® Å»Ãâ, continue´Â Á¶°Ç °É¸®¸é ±×´ÙÀ½ ¼ø¼­·Î
-//boolean ¹è¿­Àº ¸ÇÃ³À½ ÃÊ±âÈ­ 0À¸·Î µÇ´Ï±ñ false¸¦ ¹ÝÈ¯ÇÑ´Ù.
-
+//Nì´ ì£¼ì–´ì¡Œì„ ë•Œ, 1ë¶€í„° Nê¹Œì§€ì˜ ìˆ˜ë¡œ ì´ë£¨ì–´ì§„ ìˆœì—´ì„ ì‚¬ì „ìˆœìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨
+//break, continue ì°¨ì´ëŠ” breakëŠ” ì¡°ê±´ ê±¸ë¦¬ë©´ forë¬¸ íƒˆì¶œ, continueëŠ” ì¡°ê±´ ê±¸ë¦¬ë©´ ê·¸ë‹¤ìŒ ìˆœì„œë¡œ
+//boolean ë°°ì—´ì€ ë§¨ì²˜ìŒ ì´ˆê¸°í™” 0ìœ¼ë¡œ ë˜ë‹ˆê¹ falseë¥¼ ë°˜í™˜í•œë‹¤.
+//ê·¼ë° ì‹œê°„ì´ˆê³¼ ëœ¸
 void permutation(vector<int>& pick,int N,bool* b) {
 	if (pick.size() == N) {
 		for (int i = 0; i < pick.size(); i++) {
@@ -26,6 +26,6 @@ int main() {
 	vector<int> v;
 	cin >> N;
 	bool *b = new bool[N + 1]();
-	// µ¿ÀûÇÒ´ç new¿¡¼­ ¸Þ¸ð¸® 0À¸·Î ÃÊ±âÈ­ÇÏ·Á¸é µÚ¿¡ ()ºÙ¿©Áà¾ß ÇÔ
+	// ë™ì í• ë‹¹ newì—ì„œ ë©”ëª¨ë¦¬ 0ìœ¼ë¡œ ì´ˆê¸°í™”í•˜ë ¤ë©´ ë’¤ì— ()ë¶™ì—¬ì¤˜ì•¼ í•¨
 	permutation(v,N,b);
 }
