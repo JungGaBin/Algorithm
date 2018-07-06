@@ -1,8 +1,10 @@
-// °£È¤ °¡´Ù°¡ 2.35, 4.778 ÀÌ·± ½ÄÀ¸·Î ÀÔ·ÂÀÌ ÁÖ¾îÁö´Â °æ¿ì°¡ ÀÖ½À´Ï´Ù. 
-// ÀÌ·± °Íº¸°í ¿ì¸®´Â °íÁ¤ ¼Ò¼öÁ¡ ¹æ½ÄÀÌ¶ó°í ÇØ¿ä. 
-// ±×·±µ¥ ÄÄÇ»ÅÍ´Â Àú·± ½ÄÀ¸·Î ÁÖ¾îÁö¸é, ¹è¿ì¼Ì°ÚÁö¸¸, ¿ÀÂ÷°¡ »ý±â°Ô µË´Ï´Ù. 
-// ±×·¸±â ¶§¹®¿¡ Á¤È®ÇÑ °ªÀ» ¿ä±¸ÇÏ´Â °æ¿ì¿¡, doubleÇüÀÌ³ª float ÇüÀ¸·Î Ã³¸®ÇÏ¸é Æ²¸®°Ô µË´Ï´Ù.
-// ±× °æ¿ì, ¿ì¸®´Â ¸ÕÀú °íÁ¤ ¼Ò¼öÁ¡À» ºÐ¼ö·Î ¹Ù²ãÁà¾ß ÇÕ´Ï´Ù.
+// ê·¼ë° ì´ê±° í‹€ë¦¼ ã… 
+// ê°„í˜¹ ê°€ë‹¤ê°€ 2.35, 4.778 ì´ëŸ° ì‹ìœ¼ë¡œ ìž…ë ¥ì´ ì£¼ì–´ì§€ëŠ” ê²½ìš°ê°€ ìžˆìŠµë‹ˆë‹¤. 
+// ì´ëŸ° ê²ƒë³´ê³  ìš°ë¦¬ëŠ” ê³ ì • ì†Œìˆ˜ì  ë°©ì‹ì´ë¼ê³  í•´ìš”. 
+
+// ê·¸ëŸ°ë° ì»´í“¨í„°ëŠ” ì €ëŸ° ì‹ìœ¼ë¡œ ì£¼ì–´ì§€ë©´, ë°°ìš°ì…¨ê² ì§€ë§Œ, ì˜¤ì°¨ê°€ ìƒê¸°ê²Œ ë©ë‹ˆë‹¤. 
+// ê·¸ë ‡ê¸° ë•Œë¬¸ì— ì •í™•í•œ ê°’ì„ ìš”êµ¬í•˜ëŠ” ê²½ìš°ì—, doubleí˜•ì´ë‚˜ float í˜•ìœ¼ë¡œ ì²˜ë¦¬í•˜ë©´ í‹€ë¦¬ê²Œ ë©ë‹ˆë‹¤.
+// ê·¸ ê²½ìš°, ìš°ë¦¬ëŠ” ë¨¼ì € ê³ ì • ì†Œìˆ˜ì ì„ ë¶„ìˆ˜ë¡œ ë°”ê¿”ì¤˜ì•¼ í•©ë‹ˆë‹¤.
 
 #include <iostream>
 #include <sstream>
@@ -59,19 +61,19 @@ int main() {
 		cout << bunja;
 		return 0;
 	}
-	b = length - point; // 10ÀÇ b½Â °öÇÏ±â
-	//cout << point <<" "<< length<<  endl;  // .À§Ä¡ ÆÄ¾Ç 
+	b = length - point; // 10ì˜ bìŠ¹ ê³±í•˜ê¸°
+	//cout << point <<" "<< length<<  endl;  // .ìœ„ì¹˜ íŒŒì•… 
 	
-	// .À» ±âÁØÀ¸·Î ¾ÕÀº Á¤¼ö, µÞºÎºÐÀº ¼Ò¼öºÎºÐÀÌ µÈ´Ù
-	makeInteger(silsu,0,point-1); // Á¤¼öºÎºÐ(point)
-	makeDecimal(silsu,point+1,length); // ¼Ò¼öºÎºÐ(b)
-	// atoi ¾²¸é ¾ÈµÊ 0.00¸ø±¸ÇÔ
+	// .ì„ ê¸°ì¤€ìœ¼ë¡œ ì•žì€ ì •ìˆ˜, ë’·ë¶€ë¶„ì€ ì†Œìˆ˜ë¶€ë¶„ì´ ëœë‹¤
+	makeInteger(silsu,0,point-1); // ì •ìˆ˜ë¶€ë¶„(point)
+	makeDecimal(silsu,point+1,length); // ì†Œìˆ˜ë¶€ë¶„(b)
+	// atoi ì“°ë©´ ì•ˆë¨ 0.00ëª»êµ¬í•¨
 	bunja = atoi(integer);
-	//cout << endl << "Á¤¼öºÎºÐ: " << bunja << endl;
+	//cout << endl << "ì •ìˆ˜ë¶€ë¶„: " << bunja << endl;
 
 	bunmo = atoi(decimal);
-	//cout << endl << "¼Ò¼öºÎºÐ: "<< bunmo << endl;
-	// ÃÑ ¾î¶»°ÔÇ¥ÇöµÇ³Ä?
+	//cout << endl << "ì†Œìˆ˜ë¶€ë¶„: "<< bunmo << endl;
+	// ì´ ì–´ë–»ê²Œí‘œí˜„ë˜ëƒ?
 	sum_bunja = bunja*pow(10.0, (double)b) + bunmo;
 	sum_bunmo = pow(10.0, (double)b);
 	int width;
