@@ -9,4 +9,9 @@ Divide and Conquer(분할정복)
 
 문제를 제대로 나누면 conquer하는 것이 쉽기 때문에 Divide를 제대로 하는 것이 가장 중요하다.
 분할정복 알고리즘은 재귀 알고리즘이 많이 사용되는데, 이 부분에서 분할정복 알고리즘의 효율성을 깎아 내릴 수 있다.
+
+
 [출처 : http://janghw.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Divide-and-Conquer-%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5]
+
+고정소수점처리방법
+http://blog.naver.com/PostView.nhn?blogId=chogahui05&logNo=221246891984
